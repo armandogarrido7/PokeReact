@@ -1,9 +1,29 @@
 #game{
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     background-image: url('../img/game_background.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+}
+.black_pokemon{
+    width: 25vw;
+    filter: brightness(0%);
+}
+.pokemon_img{
+    position: relative;
+    width: 100%;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.lose_img{
+    width: 50vw !important;
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 10;
+    transform:translate(-50%,-50%)
+}
+.play_again_btn{
+    z-index: 100;
 }

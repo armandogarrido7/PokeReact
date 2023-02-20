@@ -6,7 +6,6 @@ function PokemonDetails(){
     const name = useParams().pokemonName;
     const [pokemonData, setPokemonData] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
-    const [pokemonTypes, setPokemonTypes] = useState([]);
     const [pokemonStats, setPokemonStats] = useState([]);
     
     useEffect(() => { getPokemonData() }, []);
@@ -15,30 +14,30 @@ function PokemonDetails(){
         fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         .then((response) => response.json())  
         .then((apiData) => {
-            console.log(apiData)
             setPokemonData(apiData);
             setHasLoaded(true);
-            setPokemonTypes(apiData.types);
             setPokemonStats(apiData.stats);
         });
     }
 
     if(hasLoaded) return(
-        <>
+        <div className="bg-dark p-2">
         <div className="card bg-light p-5 w-50 mx-auto my-5 fluid-container">
             <h1 className="text-center">{ name.toLocaleUpperCase() }</h1>
             <img
-            className=" mx-auto pokemon_img"
+            className="mx-auto pokemon_img"
             src={pokemonData.sprites.other.home.front_default}
             alt={pokemonData.name}
             />
-            <div class="card-body row">
+            <div className="card-body row">
                 <h4>TYPE: <span className="text-primary-emphasis">{pokemonData.types[0].type.name.toUpperCase()}</span></h4>
                 <h5 className="col-6">HEIGHT: <span className="text-primary-emphasis">{pokemonData.height} m</span></h5>
                 <h5 className="col-6">WEIGHT: <span className="text-primary-emphasis">{pokemonData.weight} kg</span></h5>
                 <table className="table table-striped">
                     <thead>
-                        <th colspan="2"><h3>Base Stats</h3></th>
+                        <tr>
+                            <th colSpan={2}><h3>Base Stats</h3></th>
+                        </tr>
                     </thead>
                     <tbody>
                     {pokemonStats.map((stat) => {
@@ -62,7 +61,7 @@ function PokemonDetails(){
 
             </div>
         </div>
-        </>
+        </div>
     );
 }
 

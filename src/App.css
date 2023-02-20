@@ -9,13 +9,12 @@
 }
 
 body{
-  background-image: url('./img/forest.jpg') !important;
+  /* background-image: url('./img/forest.jpg') !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  height: 100% !important;
+  height: 100% !important; */
   font-family: 'PT Sans Narrow', sans-serif !important;
-
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -24,7 +23,7 @@ body{
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -16,12 +16,13 @@ function Pokemons(){
         });
     };
     return(
-    <div className="container my-4">
+    <div className="p-5 bg-dark">
         <div className="row gy-4">
             {
             pokemonsData.map((pokemon) => (  
             <PokemonDiv key={pokemon.name} pokemonURL={pokemon.url} />
-            ))} 
+            ))
+            } 
         </div>
         <button className="btn btn-primary mt-5 mb-3" onClick={getPokemons}>Load More Pokemons</button>
     </div>
