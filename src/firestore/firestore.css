@@ -1,0 +1,15 @@
+.pokeball_img{
+    width: 128px;
+}
+.pokeball_img_small{
+    width: 64px;
+}
+.gold_medal{
+    background-color: gold;
+}
+.silver_medal{
+    background-color: silver;
+}
+.bronze_medal{
+    background-color: sandybrown;
+}

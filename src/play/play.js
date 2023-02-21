@@ -1,6 +1,6 @@
 import './play.css';
 import { useState, useEffect } from 'react';
-import { setDoc, collection, getDocs, getDoc, query, where, doc } from "firebase/firestore";
+import { setDoc, collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
 import { auth } from '../firebase';
 
@@ -74,7 +74,6 @@ function Play(){
                 .then((response) => response.json())
                 .then((pokeData) => {
                     setPokemon(pokeData);
-                    console.log(pokeData);
                     setPokeImageSrc(pokeData.sprites.front_default);
                     setHasLoaded(true);
                     setCanClick(true);

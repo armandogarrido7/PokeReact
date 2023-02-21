@@ -19,7 +19,7 @@ function SinglePokemon({ pokemonURL}) {
     if(hasLoaded){
         return(
             <>
-            <div className="card col-3">
+            <div className="card col-12 col-md-3">
                 <img src={pokemonData.sprites.other.home.front_default} className="card-img-top" alt={pokemonData.name}/>
                 <div className="card-body">
                     <h5 className="card-title fs-2">{pokemonData.name.toUpperCase()}</h5>
