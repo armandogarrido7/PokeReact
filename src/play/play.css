@@ -15,7 +15,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    min-width: 64px !important;
+    min-width: 128px !important;
 }
 .lose_img{
     width: 50vw !important;
