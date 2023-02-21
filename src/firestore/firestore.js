@@ -30,7 +30,7 @@ function FirestoreDB(){
         return <>
         <h1>LeaderBoard of Who's that Pokemon?</h1>
         <div className="container">
-            <table className="table m-auto">
+            <table className="m-auto">
                 <tbody>
                 <tr>
                     <td></td>
