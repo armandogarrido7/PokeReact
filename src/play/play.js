@@ -57,7 +57,7 @@ function Play(){
         }
     }
     function getPokemonsData(){
-        fetch('https://pokeapi.co/api/v2/pokemon/?limit=100000')
+        fetch('https://pokeapi.co/api/v2/pokemon-species/?limit=100000')
         .then((response) => response.json())  
         .then((apiData) => {
             setPokemonData(apiData);
@@ -68,12 +68,13 @@ function Play(){
     }
     function choosePokemon(apiData){
         for (let i=0;i<4;i++){
-            let rnd_num = Math.floor(Math.random() * 1279);
+            let rnd_num = Math.floor(Math.random() * 1008);
             if (i === 0){
-                fetch(apiData.results[rnd_num].url)
+                fetch('https://pokeapi.co/api/v2/pokemon/' + apiData.results[rnd_num].name)
                 .then((response) => response.json())
                 .then((pokeData) => {
                     setPokemon(pokeData);
+                    console.log(pokeData);
                     setPokeImageSrc(pokeData.sprites.front_default);
                     setHasLoaded(true);
                     setCanClick(true);
