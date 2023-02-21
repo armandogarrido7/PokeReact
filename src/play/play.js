@@ -130,8 +130,8 @@ function Play(){
     if (hasLoaded){
         return(
             <div className="container my-4 bg-dark">
+            { lose && <img src="./img/lose_img.png" alt="lose" className='lose_img'/>}
             <div className='row py-3'>
-                { lose && <img src="./img/lose_img.png" alt="lose" className='lose_img'/>}
                 <div className='card bg-white p-3 my-3 col-2 offset-5'>
                     <img src={pokeImageSrc} className="pokemon_img black_pokemon card-img-top" alt={pokemonData.name}/>
                 </div>
