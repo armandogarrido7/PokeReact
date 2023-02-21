@@ -35,18 +35,34 @@ function AppHeader(){
     }
     return (
         <header>
+          <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container-fluid align-items-bottom">
+            <Link to="/"><img className="header_logo navbar-brand" alt="header_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png"/></Link>
+            <h2 className="title navbar-text">PokeReact</h2>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul className="navbar-nav mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link to="/play" className="nav-link"><i className="fa-solid fa-gamepad fa-xl"></i></Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/pokemons" className="nav-link"><i className="fa-solid fa-book fa-xl mx-3"></i></Link>
+                </li>
+                <li className="nav-item">
+                {userID ? (
+                              <Link to="/" className="nav-link" onClick={handleLogout}><i className="fa-solid fa-right-from-bracket fa-xl"></i></Link>
+                            ) : (
+                              <Link to="/login" className="nav-link"><i className="fa-solid fa-user fa-xl"></i></Link>
+                            )}        </li>
+              </ul>
+            </div>
+          </div>
+          </nav>
             <nav className="navbar navbar-expand-sm navbar-dark bg-light">
               <div className="container-fluid justify-content-between navbar-bar">
-                <Link to="/"><img className="header_logo" alt="header" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png"/></Link>    
-                <h2 className="title">PokeReact</h2>
-                <div className="d-flex justify-content-between">
-                    <Link to="/play" className="nav-link"><i className="fa-solid fa-gamepad fa-xl"></i></Link>
-                    <Link to="/pokemons" className="nav-link"><i className="fa-solid fa-book fa-xl mx-3"></i></Link>
-                    {userID ? (
-                      <Link to="/" className="nav-link" onClick={handleLogout}><i className="fa-solid fa-right-from-bracket fa-xl"></i></Link>
-                    ) : (
-                      <Link to="/login" className="nav-link"><i className="fa-solid fa-user fa-xl"></i></Link>
-                    )}
+                <div className="d-flex justify-content-between">                    
                 </div>
               </div>
             </nav>

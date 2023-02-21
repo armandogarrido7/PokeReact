@@ -133,8 +133,8 @@ function Play(){
             <div className="container my-4 bg-dark">
             { lose && <img src="./img/lose_img.png" alt="lose" className='lose_img'/>}
             <div className='row py-3'>
-                <div className='card bg-white p-3 my-3 col-2 offset-5'>
-                    <img src={pokeImageSrc} className="pokemon_img black_pokemon card-img-top" alt={pokemonData.name}/>
+                <div className='bg-white my-3 col-2 m-auto pokemon_card'>
+                    <img src={pokeImageSrc} className="pokemon_img black_pokemon" alt={pokemonData.name}/>
                 </div>
                 <div className='d-flex flex-wrap justify-content-around'>
                     { optionsDiv }
